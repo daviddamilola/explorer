@@ -33,7 +33,6 @@ function MapExplorer() {
       controller={true}
       layers={layers}
       onViewStateChange={({ viewState }) => {
-        console.log("viewState == ",viewState);
       }}
     >
       <StaticMap
