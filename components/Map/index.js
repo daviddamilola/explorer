@@ -28,7 +28,8 @@ const data = [
 function MapExplorer() {
   const layers = [new LineLayer({ id: "line-layer", data })];
   return (
-    <DeckGL
+      <div className="w-full h-screen relative ">
+ <DeckGL
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
       layers={layers}
@@ -36,10 +37,12 @@ function MapExplorer() {
       }}
     >
       <StaticMap
-        mapStyle="mapbox://styles/mapbox/dark-v9"
         mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
+        mapStyle="mapbox://styles/mapbox/dark-v9"
       />
     </DeckGL>
+      </div>
+   
   );
 }
 
