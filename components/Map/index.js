@@ -5,12 +5,19 @@ import { StaticMap } from "react-map-gl";
 
 // Viewport settings
 const INITIAL_VIEW_STATE = {
-  longitude: 9.082,
-  latitude: 8.6753,
-  zoom: 5,
-  pitch: 0,
-  bearing: 0,
-};
+    "width": 1440,
+    "height": 579,
+    "latitude": 9.008860826770198,
+    "longitude": 9.181477756474857,
+    "zoom": 5.302494252418037,
+    "bearing": 0,
+    "pitch": 0,
+    "altitude": 1.5,
+    "maxZoom": 20,
+    "minZoom": 0,
+    "maxPitch": 60,
+    "minPitch": 0
+}
 
 // Data to be used by the LineLayer
 const data = [
@@ -25,6 +32,9 @@ function MapExplorer() {
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
       layers={layers}
+      onViewStateChange={({ viewState }) => {
+        console.log("viewState == ",viewState);
+      }}
     >
       <StaticMap
         mapStyle="mapbox://styles/mapbox/dark-v9"
