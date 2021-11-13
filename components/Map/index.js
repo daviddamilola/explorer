@@ -2,22 +2,23 @@ import React from "react";
 import DeckGL from "@deck.gl/react";
 import { LineLayer } from "@deck.gl/layers";
 import { StaticMap } from "react-map-gl";
+import { MapView, FirstPersonView } from "@deck.gl/core";
 
 // Viewport settings
 const INITIAL_VIEW_STATE = {
-    "width": 1440,
-    "height": 579,
-    "latitude": 9.008860826770198,
-    "longitude": 9.181477756474857,
-    "zoom": 5.302494252418037,
-    "bearing": 0,
-    "pitch": 0,
-    "altitude": 1.5,
-    "maxZoom": 20,
-    "minZoom": 0,
-    "maxPitch": 60,
-    "minPitch": 0
-}
+  width: 1440,
+  height: 579,
+  latitude: 9.008860826770198,
+  longitude: 9.181477756474857,
+  zoom: 5.302494252418037,
+  bearing: 0,
+  pitch: 0,
+  altitude: 1.5,
+  maxZoom: 20,
+  minZoom: 0,
+  maxPitch: 60,
+  minPitch: 0,
+};
 
 // Data to be used by the LineLayer
 const data = [
@@ -28,21 +29,19 @@ const data = [
 function MapExplorer() {
   const layers = [new LineLayer({ id: "line-layer", data })];
   return (
-      <div className="w-full h-screen relative ">
- <DeckGL
-      initialViewState={INITIAL_VIEW_STATE}
-      controller={true}
-      layers={layers}
-      onViewStateChange={({ viewState }) => {
-      }}
-    >
-      <StaticMap
-        mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
-        mapStyle="mapbox://styles/mapbox/dark-v9"
-      />
-    </DeckGL>
-      </div>
-   
+    <div className="w-full h-screen relative ">
+      <DeckGL
+        initialViewState={INITIAL_VIEW_STATE}
+        controller={true}
+        layers={layers}
+        onViewStateChange={({ viewState }) => {}}
+      >
+          <StaticMap
+            mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
+            mapStyle="mapbox://styles/mapbox/dark-v9"
+          />
+      </DeckGL>
+    </div>
   );
 }
 
