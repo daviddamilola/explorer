@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.5",
     "deck.gl": "^8.6.3",
     "next": "latest",
     "next-pwa": "^5.4.0",

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { SearchCircleIcon } from "@heroicons/react/solid";
 
 function Nav() {
   return (
@@ -20,7 +21,10 @@ function Nav() {
         </Link>
       </div>
       <div className="flex">
+        <div className="relative">
         <input className="px-2 py-1 mr-2 rounded shadow outline-none focus:ring-green-500 ring-2 ring-transparent" />
+        <SearchCircleIcon className="absolute top-0 right-2" color="black" width="30" height="30" />
+        </div>
         <Link href="/profile">
         <div className="w-8 h-8 rounded-full text-white bg-green-500 flex items-center justify-center cursor-pointer">
           D
