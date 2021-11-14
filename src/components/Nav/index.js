@@ -6,7 +6,7 @@ function Nav() {
     <div className="w-full flex justify-between items-center bg-black px-2 py-4 ">
       <div>
         <Link href="/">
-          <p className="text-green-500 text-base flex items-center cursor-pointer">
+          <h3 className="flex items-center cursor-pointer">
             Explorer
             <span className="ml-2">
               <img
@@ -16,7 +16,7 @@ function Nav() {
                 alt="nig flag"
               />
             </span>
-          </p>
+          </h3>
         </Link>
       </div>
       <div className="flex">

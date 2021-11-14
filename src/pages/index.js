@@ -1,7 +1,6 @@
 import Head from "next/head";
-import NavWrapper from "../components/Layouts/NavWrapper";
-import MapExplorer from "../components/Map";
-import Nav from "../components/Nav";
+import NavWrapper from "layouts/NavWrapper";
+import MapExplorer from "components/Map";
 
 export default function Home() {
   return (
