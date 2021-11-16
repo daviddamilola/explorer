@@ -1,5 +1,8 @@
 import initFirebase from "./initFirebase";
 import firebaseAuthServiceFactory from "./firebaseAuth";
+import apiServiceFactory from "./api";
+
+const firebase = initFirebase();
 
 const authServices = firebaseAuthServiceFactory({
   store: { firebase },

@@ -6,3 +6,5 @@ const apiServiceFactory = (serviceDeps) => {
         // api services go in here
     }
 }
+
+export default apiServiceFactory;
