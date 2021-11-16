@@ -1,8 +1,24 @@
 import Head from "next/head";
 import NavWrapper from "layouts/NavWrapper";
 import MapExplorer from "components/Map";
+import api from "services/initApi";
+import { useState } from "react";
 
 export default function Home() {
+  const [user, setUser] = useState();
+  useEffect(() => {
+    api.authServices.onAuthStateChanged((user) => {
+      const userData = api.authServices.extractUserData(user);
+
+      if (!user) {
+        // No `user` object (e.g. user just logged out)
+        setUser(null);
+        api.anonymousLogin();
+      } else {
+        // TODO: fetch user data
+      }
+    });
+  }, []);
   return (
     <div>
       <Head>
